@@ -1,0 +1,32 @@
+{
+  "name": "easyocpp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend.js",
+  "scripts": {
+    "test": "test",
+    "devStart": "nodemon db.js"
+  },
+  "keywords": [
+    "OCPP-Backend",
+    "JS",
+    "Node"
+  ],
+  "author": "niklasHohlweg",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "ip": "^1.1.8",
+    "mongoose": "^8.0.0",
+    "node-uuid": "^1.4.8",
+    "ocpp": "^0.0.1",
+    "ocpp-rpc": "^2.0.2",
+    "websocket": "^1.0.34",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

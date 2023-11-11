@@ -1,0 +1,82 @@
+:root {
+    --background: #91f2ea;
+    --head: #4a3ce6;
+    --body: #a59ef0;
+    --textColor: white;
+    --textColorBody: black;
+}
+
+html {
+    background-color: var(--background);
+}
+
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+
+.table {
+    display: grid;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.tableHead {
+    display: flex;
+    background-color: var(--head);
+}
+
+.tableColumnTimestamp {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 300px;
+    color: var(--textColor);
+}
+
+.tableColumnMsg {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 300px;
+    color: var(--textColor);
+}
+
+.tableColumnMeter {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 150px;
+    color: var(--textColor);
+}
+
+.tableLine {
+    display: flex;
+    background-color: var(--body);
+}
+
+.recTimestamp {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 300px;
+    color: var(--textColorBody);
+}
+
+.recMsg {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 300px;
+    color: var(--textColorBody);
+}
+
+.recMeter {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 150px;
+    color: var(--textColorBody);
+}
