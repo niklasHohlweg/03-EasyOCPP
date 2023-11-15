@@ -14,7 +14,8 @@ const httpPort = process.env.HTTP_Port || 3000;
 const wsPort = process.env.WS_Port || 8080;
 
 //Database
-var chargeLogs = require('./db');
+/*var chargeLogs = require('./db');*/
+const { type } = require('os');
 const dbUrl = process.env.db;
 mongoose.connect(dbUrl);
 console.log("Database Connected");
@@ -25,6 +26,7 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ port: wsPort });
 console.log(`WebSocket-Server is running on Port ${wsPort}`);
 
+var collection = [];
 var clients = [];
 var count = 0;
 
@@ -110,8 +112,7 @@ app.get('/hohlweg', (req, res) => {
 
 app.get('/adm/data', async (req, res) => {
 
-    //const data = getData();
-    const data1 = await chargeLogs.find();
+    /*const data1 = await chargeLogs.find();
 
     let collection = [];
     let dataElem = {
@@ -134,7 +135,7 @@ app.get('/adm/data', async (req, res) => {
             }
         );
         
-    });
+    });*/
     
     res.send(JSON.stringify(collection));
 
@@ -186,7 +187,7 @@ function generateReply(message) {
 //Database Connection
 async function dbRun(typeId, uniqueId, action, payload) {
 
-    try {
+    /*try {
         const log = await chargeLogs.create({
                 MessageTypeId: typeId,
                 UniqueId: uniqueId,
@@ -202,12 +203,22 @@ async function dbRun(typeId, uniqueId, action, payload) {
 
         console.error(err.message);
 
+    }*/
+
+    const message = {
+        MessageTypeId: typeId,
+        UniqueId: uniqueId,
+        Action: action,
+        Payload: payload,
+        Timestamp: now()
     }
+
+    collection.push(message);
     
 
 }
 
-async function getData() {
+/*async function getData() {
 
     try {
         const filter = {};
@@ -219,4 +230,4 @@ async function getData() {
         console.error(err.message);
     }
 
-}
+}*/
